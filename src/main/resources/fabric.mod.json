@@ -29,7 +29,7 @@
 		],
 		"fabric-datagen": [
 			{
-				"value": "top.mykodb.nota.datagen.NotaDataGenerator"
+				"value": "top.mykodb.nota.NotaDataGenerator"
 			}
 		]
 	},
