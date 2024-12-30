@@ -36,7 +36,7 @@ class BlockLootTableProvider(dataOutput: FabricDataOutput?,registryLookup: Compl
 
 
     override fun generate() {
-        addDrop(ModBlock.LING_SHI_ORE, oreLikeDrops(ModBlock.LING_SHI_ORE, ModItem.LING_SHI,2.0f,5.0f));
-        addDrop(ModBlock.DEEPSLATE_LING_SHI_ORE, oreLikeDrops(ModBlock.DEEPSLATE_LING_SHI_ORE, ModItem.LING_SHI,3.0f,6.0f));
+        addDrop(ModBlock.LING_SHI_ORE, oreLikeDrops(ModBlock.LING_SHI_ORE, ModItem.LING_SHI,2.0f,5.0f))
+        addDrop(ModBlock.DEEPSLATE_LING_SHI_ORE, oreLikeDrops(ModBlock.DEEPSLATE_LING_SHI_ORE, ModItem.LING_SHI,3.0f,6.0f))
     }
 }
