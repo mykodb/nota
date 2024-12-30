@@ -1,0 +1,53 @@
+{
+	"schemaVersion": 1,
+	"id": "nota",
+	"version": "${version}",
+	"name": "nota",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/nota/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "top.mykodb.nota.Nota",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "top.mykodb.nota.NotaClient",
+				"adapter": "kotlin"
+			}
+		],
+		"fabric-datagen": [
+			{
+				"value": "top.mykodb.nota.NotaDataGenerator"
+			}
+		]
+	},
+	"mixins": [
+		"nota.mixins.json",
+		{
+			"config": "nota.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
