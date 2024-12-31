@@ -1,5 +1,7 @@
 package top.mykodb.nota.register
 
+import net.minecraft.component.DataComponentTypes
+import net.minecraft.item.Item
 import net.minecraft.item.ItemGroup
 import net.minecraft.item.ItemStack
 import net.minecraft.registry.Registries
@@ -17,6 +19,7 @@ class ModItemGroups {
                 .icon{ ItemStack(ModItem.NOTA) }
                 .entries { _: ItemGroup.DisplayContext, entries: ItemGroup.Entries ->
                     //entries.add()
+                    entries.add(ModItem.DAN_YAO)
                     entries.add(ModItem.LING_SHI)
                     entries.add(ModBlock.LING_SHI_ORE)
                     entries.add(ModBlock.DEEPSLATE_LING_SHI_ORE)

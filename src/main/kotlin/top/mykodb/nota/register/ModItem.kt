@@ -15,15 +15,14 @@ class ModItem {
         val NOTA:Item = registerItems("nota", Item(Item.Settings()))
         val LING_SHI:Item = registerItems("ling_shi",Item(Item.Settings()))
 
-        val DAN_YAO:Item = registerItems("dan_yao",Item(Item.Settings().food((FoodComponent.Builder())
-                .nutrition(4)
-                .saturationModifier(0.3f)
-                .statusEffect(StatusEffectInstance(StatusEffects.HUNGER, 600, 0), 0.3F)
-                .build())))
+        //注册食物的一个案例
+        val DAN_YAO:Item = registerItems("dan_yao",Item(Item.Settings()
+            .food((FoodComponent.Builder()).alwaysEdible().build())))
 
         private fun registerItems(path:String, item:Item):Item{
             return Registry.register(Registries.ITEM, Identifier.of(Nota.MOD_ID,path),item)
         }
+
 
         fun initialize() {
 
