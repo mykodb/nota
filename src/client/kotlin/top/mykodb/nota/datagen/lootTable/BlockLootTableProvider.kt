@@ -1,4 +1,4 @@
-package top.mykodb.nota.datagen.loot_table
+package top.mykodb.nota.datagen.lootTable
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider
@@ -13,8 +13,8 @@ import net.minecraft.loot.function.SetCountLootFunction
 import net.minecraft.loot.provider.number.UniformLootNumberProvider
 import net.minecraft.registry.RegistryKeys
 import net.minecraft.registry.RegistryWrapper.WrapperLookup
-import top.mykodb.nota.register.ModBlock
-import top.mykodb.nota.register.ModItem
+import top.mykodb.nota.block.ModBlock
+import top.mykodb.nota.item.ModItem
 import java.util.concurrent.CompletableFuture
 
 
@@ -36,7 +36,7 @@ class BlockLootTableProvider(dataOutput: FabricDataOutput?,registryLookup: Compl
 
 
     override fun generate() {
-        addDrop(ModBlock.LING_SHI_ORE, oreLikeDrops(ModBlock.LING_SHI_ORE, ModItem.LING_SHI,2.0f,5.0f))
-        addDrop(ModBlock.DEEPSLATE_LING_SHI_ORE, oreLikeDrops(ModBlock.DEEPSLATE_LING_SHI_ORE, ModItem.LING_SHI,3.0f,6.0f))
+        addDrop(ModBlock.LING_SHI_ORE, oreLikeDrops(ModBlock.LING_SHI_ORE, ModItem.LING_SHI,1.0f,3.0f))
+        addDrop(ModBlock.DEEPSLATE_LING_SHI_ORE, oreLikeDrops(ModBlock.DEEPSLATE_LING_SHI_ORE, ModItem.LING_SHI,2.0f,4.0f))
     }
 }

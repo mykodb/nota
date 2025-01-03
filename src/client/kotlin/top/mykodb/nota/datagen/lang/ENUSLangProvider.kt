@@ -9,6 +9,5 @@ class ENUSLangProvider(dataOutput: FabricDataOutput?, registryLookup: Completabl
     FabricLanguageProvider(dataOutput, "en_us", registryLookup) {
     override fun generateTranslations(registryLookup: WrapperLookup, ling: TranslationBuilder) {
         //ling.add()
-
     }
 }

@@ -1,4 +1,4 @@
-package top.mykodb.nota.register.world
+package top.mykodb.nota.world
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors
@@ -10,6 +10,8 @@ import top.mykodb.nota.Nota
 
 class ModFeature {
     companion object {
+
+        //注册 矿物生成json文件
         val ORE_LINGShI = BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
             RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(Nota.MOD_ID, "ore_lingshi")))
 
