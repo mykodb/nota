@@ -3,15 +3,15 @@
 	"id": "nota",
 	"version": "${version}",
 	"name": "Nota",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "一些奇思妙想!",
 	"authors": [
-		"Me!"
+		"mykodb"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://www.mykodb.top/",
+		"sources": "https://github.com/mykodb/nota/"
 	},
-	"license": "CC0-1.0",
+	"license": "Apache-2.0",
 	"icon": "assets/nota/icon.png",
 	"environment": "*",
 	"entrypoints": {
