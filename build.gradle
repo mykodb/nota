@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
 	id 'fabric-loom' version '1.9-SNAPSHOT'
 	id 'maven-publish'
@@ -12,11 +14,7 @@ base {
 }
 
 repositories {
-	// 在此处添加存储库以检索构件。
-	// 你应该只在依赖其他 Mod 时使用它，因为
-	// Loom 添加了必要的 maven 存储库，以自动从 Minecraft 和库下载。
-	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
-	// 了解有关存储库的更多信息。
+
 }
 
 loom {
@@ -24,8 +22,10 @@ loom {
 
 	mods {
 		"nota" {
+			//noinspection GroovyAssignabilityCheck
 			sourceSet sourceSets.main
-			sourceSet sourceSets.client
+            //noinspection GroovyAssignabilityCheck
+            sourceSet sourceSets.client
 		}
 	}
 
@@ -42,8 +42,6 @@ dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-
-	// Fabric API 的 API 中。这在技术上是可选的，但您可能仍然需要它。
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
 }
@@ -60,17 +58,14 @@ tasks.withType(JavaCompile).configureEach {
 	it.options.release = 17
 }
 
-tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+tasks.withType(KotlinCompile).configureEach {
 	kotlinOptions {
 		jvmTarget = 17
 	}
 }
 
 java {
-	// Loom 会自动将 sourcesJar 附加到 RemapSourcesJar 任务和 “build” 任务（如果存在）。
-	// 如果删除此行，则不会生成源。
 	withSourcesJar()
-
 	sourceCompatibility = JavaVersion.VERSION_17
 	targetCompatibility = JavaVersion.VERSION_17
 }
@@ -86,14 +81,12 @@ publishing {
 	publications {
 		create("mavenJava", MavenPublication) {
 			artifactId = project.archives_base_name
-			from components.java
+            //noinspection GroovyAssignabilityCheck
+            from components.java
 		}
 	}
 
-	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
 	repositories {
-		//在此处添加要发布到的存储库。
-		// 注意： 此区块与顶层区块的功能不同。
-		// 此处的存储库将用于发布构件，而不是用于检索依赖项。
+
 	}
 }
