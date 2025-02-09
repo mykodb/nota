@@ -1,4 +1,4 @@
-# Nota
+<h1 align="center">Nota</h1>
 
 ## 项目简介
 `Nota` 是一款基于 Minecraft 的 Fabric 模组。

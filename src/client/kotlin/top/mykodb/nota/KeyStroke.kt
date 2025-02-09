@@ -8,6 +8,7 @@ import net.minecraft.client.util.InputUtil
 import net.minecraft.text.Text
 import org.lwjgl.glfw.GLFW
 import top.mykodb.nota.Nota.MOD_ID
+import top.mykodb.nota.gui.GUI
 
 
 class KeyStroke {
@@ -25,7 +26,7 @@ class KeyStroke {
         fun initialize(){
             ClientTickEvents.END_CLIENT_TICK.register(ClientTickEvents.EndTick {
                 while (keyGui.wasPressed()) {
-                    MinecraftClient.getInstance().setScreen(GUI.GUI(Text.empty()))
+                    MinecraftClient.getInstance().setScreen(GUI.TerminalGUI(Text.empty()))
                 }
             })
         }

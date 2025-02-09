@@ -8,15 +8,16 @@ import net.minecraft.util.Identifier
 import top.mykodb.nota.Nota.MOD_ID
 
 import top.mykodb.nota.Nota.logger
+import top.mykodb.nota.gui.GUI
 
 
 object NotaClient : ClientModInitializer {
 
 	private fun terminalGui (){
-		ClientPlayNetworking.registerGlobalReceiver( Identifier.of(MOD_ID, "terminal_gui")) { client, handler, buf, responseSender ->
+		ClientPlayNetworking.registerGlobalReceiver( Identifier.of(MOD_ID, "terminal_gui")) { client, _, _, _ ->
 			//实现客户端需要执行的逻辑
 			client.execute {
-				MinecraftClient.getInstance().setScreen(GUI.GUI(Text.empty()))
+				MinecraftClient.getInstance().setScreen(GUI.TerminalGUI(Text.empty()))
 			}
 		}
 	}

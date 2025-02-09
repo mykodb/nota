@@ -10,11 +10,11 @@ class NotaItemGroups {
     companion object {
         val ITEM_GROUP: ItemGroup = registerItemGroup(
             "nota_group", ItemGroup
-            .create(null, -1).icon { ItemStack(Items.ITEM_FRAME) }
-            .displayName(Text.translatable("itemGroup.nota_group"))
-            .entries { _: ItemGroup.DisplayContext, entries: ItemGroup.Entries ->
-                entries.add(NotaItems.TERMINAL)
-            }.build()
+                .create(null, -1).icon { ItemStack(Items.ITEM_FRAME) }
+                .displayName(Text.translatable("itemGroup.nota_group"))
+                .entries { _: ItemGroup.DisplayContext, entries: ItemGroup.Entries ->
+                    entries.add(NotaItems.TERMINAL)
+                }.build()
         )
 
         fun initialize() {}
